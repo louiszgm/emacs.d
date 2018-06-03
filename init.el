@@ -3,7 +3,6 @@
 
 ;;; This file bootstraps the configuration, which is divided into
 ;;; a number of other files.
-
 (let ((minver "24.3"))
   (when (version< emacs-version minver)
     (error "Your Emacs is too old -- this config requires v%s or higher" minver)))
@@ -144,7 +143,6 @@
 (when (maybe-require-package 'uptimes)
   (setq-default uptimes-keep-count 200)
   (add-hook 'after-init-hook (lambda () (require 'uptimes))))
-
 
 ;;----------------------------------------------------------------------------
 ;; Allow access from emacsclient
