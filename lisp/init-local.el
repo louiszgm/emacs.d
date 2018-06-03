@@ -5,4 +5,6 @@
 (setq blog-admin-backend-new-post-with-same-name-dir t) ;; create same-name directory with new post
 (setq blog-admin-backend-hexo-config-file "_config.yml") ;; default assumes _config.yml
 
+(require 'smartparens-config)
+
 (provide 'init-local)
