@@ -7,4 +7,8 @@
 
 (require 'smartparens-config)
 
+(setq org2nikola-output-root-directory "~/blog")
+;; use google code prettify (https://code.google.com/p/google-code-prettify/)
+(setq org2nikola-use-google-code-prettify t)
+
 (provide 'init-local)
