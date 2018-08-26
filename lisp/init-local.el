@@ -1,9 +1,9 @@
 (require 'blog-admin)
+(setq blog-admin-backend-type 'nikola)
 (setq blog-admin-backend-path "~/blog")
-(setq blog-admin-backend-type 'hexo)
-(setq blog-admin-backend-new-post-in-drafts t) ;; create new post in drafts by default
-(setq blog-admin-backend-new-post-with-same-name-dir t) ;; create same-name directory with new post
-(setq blog-admin-backend-hexo-config-file "_config.yml") ;; default assumes _config.yml
+(setq blog-admin-backend-new-post-in-drafts t)
+(setq blog-admin-backend-nikola-executable "~/.venvs/nikola/bin/nikola") ;; path to nikola executable
+(setq blog-admin-backend-nikola-config-file "conf.py") ;; conf.py is default
 
 (require 'smartparens-config)
 
