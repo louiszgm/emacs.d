@@ -4,7 +4,7 @@
 ;; Author: Chen Bin <chenbin.sh@gmail.com>
 ;; URL: http://github.com/redguardtoo/org2nikola
 ;; Keywords: blog static html export org
-;; Version: 0.1.8
+;; Version: 0.2.0
 
 ;; This file is not part of GNU Emacs.
 
@@ -51,7 +51,7 @@
 
 (defvar org2nikola-prettify-unsupported-language
   '(elisp "lisp"
-          emacs-lisp "lisp"))
+    emacs-lisp "lisp"))
 
 (defcustom org2nikola-after-hook nil
   "Hook after HTML files are created. title and slug are pass as parameters."
@@ -511,17 +511,28 @@
   (replace-regexp-in-string "\\`[ \t\n]*" "" (replace-regexp-in-string "[ \t\n]*\\'" "" string)))
 
 (defun org2nikola-get-slug (str)
-  (setq str (mapconcat 'org2nikola--char-to-string str ""))
-  ;; clean slug little bit
-  (setq str (replace-regexp-in-string "\-\-+" "-" str))
-  (setq str (replace-regexp-in-string "^\-+" "" str))
-  (setq str (replace-regexp-in-string "\-+$" "" str))
-  (setq str (org2nikola-trim-string str))
-  (setq str (downcase str))
-  str)
+    (setq str (mapconcat 'org2nikola--char-to-string str ""))
+    ;; clean slug little bit
+    (setq str (replace-regexp-in-string "\-\-+" "-" str))
+    (setq str (replace-regexp-in-string "^\-+" "" str))
+    (setq str (replace-regexp-in-string "\-+$" "" str))
+    (setq str (org2nikola-trim-string str))
+    (setq str (downcase str))
+    str)
+
+(defun org2nikola-line ()
+  (buffer-substring-no-properties (line-beginning-position)
+                                  (line-end-position)))
+(defun org2nikola-select-region (b e)
+  (interactive)
+  (goto-char b)
+  (set-mark-command nil)
+  (goto-char e)
+  (setq deactivate-mark nil))
 
 (defun org2nikola-export-into-html-text ()
   (let* (html-text
+         cur-line
          ;; Emacs 25+ prefer exporting drawer by default
          ;; obviously not acception in exporting to mail body
          (org-export-with-drawers nil)
@@ -529,12 +540,17 @@
          e)
     (save-excursion
       (org-mark-element)
-      (forward-line) ;; donot export title
-      (setq b (region-beginning))
+      ;; donot export title
+      (forward-line)
+      ;; skip attributes
+      (while (string-match-p "^ *:[A-Z_]+:" (org2nikola-line))
+        (forward-line))
+      (setq b (line-beginning-position))
       (setq e (region-end)))
 
     ;; org-export-as will detect active region and narrow to the region
     (save-excursion
+      (org2nikola-select-region b e)
       (setq html-text
             (cond
              ((version-list-< (version-to-list (org-version)) '(8 0 0))
