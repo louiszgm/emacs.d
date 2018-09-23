@@ -7,7 +7,7 @@
  '(custom-safe-themes
    (quote
     ("1b8d67b43ff1723960eb5e0cba512a2c7a2ad544ddb2533a90101fd1852b426e" default)))
- '(org-agenda-files (quote ("~/org" "~/dockerfiles/run.org")))
+ '(org-agenda-files (quote ("~/org" "~/dockerfiles/run.org" "~/org/client")))
  '(org-default-notes-file "~/org/refile.org")
  '(package-selected-packages
    (quote
