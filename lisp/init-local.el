@@ -1,12 +1,3 @@
-(require 'blog-admin)
-(setq blog-admin-backend-type 'nikola)
-(setq blog-admin-backend-path "~/blog")
-(setq blog-admin-backend-new-post-in-drafts t)
-(setq blog-admin-backend-nikola-executable "~/dockerfiles/nikola/bin/nikola-docker") ;; path to nikola executable
-(setq blog-admin-backend-nikola-config-file "conf.py") ;; conf.py is default
-
-(require 'smartparens-config)
-
 (setq org2nikola-output-root-directory "~/blog")
 ;; use google code prettify (https://code.google.com/p/google-code-prettify/)
 (setq org2nikola-use-google-code-prettify t)
@@ -70,5 +61,18 @@
               ("h" "Habit" entry (file "~/git/org/refile.org")
                "* NEXT %?\n%U\n%a\nSCHEDULED: %(format-time-string \"%<<%Y-%m-%d %a .+1d/3d>>\")\n:PROPERTIES:\n:STYLE: habit\n:REPEAT_TO_STATE: NEXT\n:END:\n"))))
 
+
+;;some special package that not contain, you should install it manual
+
+;;blog-admin
+(require 'blog-admin)
+(setq blog-admin-backend-type 'nikola)
+(setq blog-admin-backend-path "~/blog")
+(setq blog-admin-backend-new-post-in-drafts t)
+(setq blog-admin-backend-nikola-executable "~/dockerfiles/nikola/bin/nikola-docker") ;; path to nikola executable
+(setq blog-admin-backend-nikola-config-file "conf.py") ;; conf.py is default
+
+;;smartparens
+(require 'smartparens-config)
 
 (provide 'init-local)

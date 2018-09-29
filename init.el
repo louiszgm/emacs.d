@@ -168,7 +168,10 @@
 ;;----------------------------------------------------------------------------
 ;; Allow users to provide an optional "init-local" containing personal settings
 ;;----------------------------------------------------------------------------
-(require 'init-local)
+(require 'init-local nil t)
+
+
+
 (provide 'init)
 
 ;; Local Variables:
