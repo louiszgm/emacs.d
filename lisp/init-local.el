@@ -61,6 +61,10 @@
               ("h" "Habit" entry (file "~/git/org/refile.org")
                "* NEXT %?\n%U\n%a\nSCHEDULED: %(format-time-string \"%<<%Y-%m-%d %a .+1d/3d>>\")\n:PROPERTIES:\n:STYLE: habit\n:REPEAT_TO_STATE: NEXT\n:END:\n"))))
 
+(setq org-export-coding-system 'utf-8)
+(prefer-coding-system 'utf-8)
+(set-charset-priority 'unicode)
+(setq default-process-coding-system '(utf-8-unix . utf-8-unix))
 
 ;;some special package that not contain, you should install it manual
 
