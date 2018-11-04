@@ -125,6 +125,8 @@
 (require 'init-folding)
 (require 'init-dash)
 
+(require 'init-go)
+
 ;;(require 'init-twitter)
 ;; (require 'init-mu)
 (require 'init-ledger)
