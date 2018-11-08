@@ -49,3 +49,4 @@ site-lisp/package/
 /magithub
 /server
 ac-comphist.dat
+projectile.cache

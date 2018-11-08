@@ -1,3 +1,9 @@
+(maybe-require-package 'php-auto-yasnippets)
+(maybe-require-package 'ac-php)
+(maybe-require-package 'go-autocomplete)
+(maybe-require-package 'go-mode)
+(maybe-require-package 'golint)
+(maybe-require-package 'go-eldoc)
 ;;;custom go ide
 (require 'go-autocomplete)
 (require 'go-eldoc)
