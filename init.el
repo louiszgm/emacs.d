@@ -126,6 +126,7 @@
 (require 'init-dash)
 
 (require 'init-go)
+(require 'init-oxHugo)
 
 ;;(require 'init-twitter)
 ;; (require 'init-mu)
