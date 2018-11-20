@@ -1,0 +1,10 @@
+(maybe-require-package 'easy-hugo)
+(setq easy-hugo-basedir "~/git/hugoBlog/")
+(setq easy-hugo-url "https://louiszgm.xin")
+(setq easy-hugo-default-ext ".org")
+(setq easy-hugo-org-header t)
+(setq easy-hugo-no-help t)
+(setq easy-hugo-previewtime "300")
+(define-key global-map (kbd "C-c C-h") 'easy-hugo)
+
+(provide 'init-easyHugo)

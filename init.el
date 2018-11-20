@@ -127,6 +127,7 @@
 
 (require 'init-go)
 (require 'init-oxHugo)
+(require 'init-easyHugo)
 
 ;;(require 'init-twitter)
 ;; (require 'init-mu)
