@@ -1,11 +1,15 @@
-(maybe-require-package 'company-go)
 (maybe-require-package 'go-projectile)
 (maybe-require-package 'go-mode)
 (maybe-require-package 'golint)
 (maybe-require-package 'go-eldoc)
 (maybe-require-package 'gotest)
+(maybe-require-package 'company-go)
 
+
+(require 'company)
+(require 'company-go)
 (require 'go-projectile)
+
 
 ;; Ignore go test -c output files
 (add-to-list 'completion-ignored-extensions ".test")
@@ -16,9 +20,6 @@
   (defun prelude-go-mode-defaults ()
     ;; Add to default go-mode key bindings
     (let ((map go-mode-map))
-      (define-key map (kbd "C-c a") 'go-test-current-project) ;; current package, really
-      (define-key map (kbd "C-c m") 'go-test-current-file)
-      (define-key map (kbd "C-c .") 'go-test-current-test)
       (define-key map (kbd "C-c b") 'go-run)
       (define-key map (kbd "C-h f") 'godoc-at-point))
 
@@ -29,6 +30,9 @@
 
     ;; gofmt on save
     (add-hook 'before-save-hook 'gofmt-before-save nil t)
+
+    ;; stop whitespace being highlighted
+    (whitespace-toggle-options '(tabs))
 
     ;; Company mode settings
     (set (make-local-variable 'company-backends) '(company-go))
