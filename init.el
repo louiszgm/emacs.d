@@ -88,7 +88,6 @@
 (require 'init-erlang)
 (require 'init-javascript)
 (require 'init-php)
-(require 'org2nikola)
 (require 'init-org)
 (require 'init-nxml)
 (require 'init-html)
