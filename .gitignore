@@ -50,3 +50,4 @@ site-lisp/package/
 /server
 ac-comphist.dat
 projectile.cache
+custom.el
