@@ -1,4 +1,12 @@
+;; Use en_US locale to format time.
+;; if not set, the OS locale is used.
+(setq system-time-locale "C")
 ;; This is org setup
+(setq org-export-coding-system 'utf-8)
+(prefer-coding-system 'utf-8)
+(set-charset-priority 'unicode)
+(setq default-process-coding-system '(utf-8-unix . utf-8-unix))
+
 (setq org-agenda-files (quote ("~/git/org"
                                "~/git/org/client"
                                "~/git/dockerfiles/run.org")))
