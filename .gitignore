@@ -47,7 +47,13 @@ site-lisp/package/
 /rake.cache
 /plantuml.jar
 /magithub
+<<<<<<< HEAD
 /server
 ac-comphist.dat
 projectile.cache
 custom.el
+=======
+.cache/
+/forge-database.sqlite
+/transient
+>>>>>>> umaster
