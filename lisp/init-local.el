@@ -1,3 +1,4 @@
+(add-to-list `custom-theme-load-path "~/.emacs.d/themes/")
 ;; Use en_US locale to format time.
 ;; if not set, the OS locale is used.
 (setq system-time-locale "C")
