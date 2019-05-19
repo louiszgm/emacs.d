@@ -49,7 +49,7 @@
 ;;----------------------------------------------------------------------------
 
 (require-package 'diminish)
-(require-package 'scratch)
+(maybe-require-package 'scratch)
 (require-package 'command-log-mode)
 
 (require 'init-frame-hooks)
